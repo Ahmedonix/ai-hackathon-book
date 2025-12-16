@@ -45,7 +45,7 @@ const config = {
         },
         blog: false, // Disable blog for educational book
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
       }),
     ],

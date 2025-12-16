@@ -1,55 +1,69 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT
+Version change: 1.0.0 -> 1.0.0 (initial constitution creation)
+Modified principles: None (new project constitution)
+Added sections: Core Principles, Key Standards, Constraints, Success Criteria, Governance
+Removed sections: None
+Templates requiring updates: N/A (first version)
+Follow-up TODOs: None
+-->
+# AI/Spec-Driven Book Creation Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Spec-Driven Development
+All chapters and content originate from clear, detailed specifications before any writing begins. Specifications must include purpose, learning objectives, explanations, step-by-step guides, code examples, and summaries.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Technical Accuracy
+All content must align with official documentation from Docusaurus, GitHub Pages, and relevant tools. Technical accuracy is verified through testing and referencing authoritative sources.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Clarity for Beginner-to-Intermediate Developers
+Content must be accessible and understandable to developers with varying skill levels. Writing level follows technical English, grade 8–10 clarity standards.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Documentation-Quality Writing
+Content must follow educational, step-by-step, and actionable formats. Chapter structure: Purpose → Learning Objectives → Explanation → Step-by-Step Guide → Code Examples → Summary.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. AI-Augmented Authorship
+Leverage Spec-Kit Plus and Qwen Code for efficient content creation and authoring, while ensuring all content is human-reviewed for quality and accuracy.
 
-### [PRINCIPLE_6_NAME]
+### VI. Code Example Quality
 
+All code examples must run successfully and follow Docusaurus formatting conventions. Examples are tested and validated before inclusion in chapters.
 
-[PRINCIPLE__DESCRIPTION]
+## Key Standards
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+- Chapter structure: Purpose → Learning Objectives → Explanation → Step-by-Step Guide → Code Examples → Summary
+- All content must be written from a spec before chapter drafting
+- Code examples must run successfully and follow Docusaurus formatting
+- Primary sources: official documentation (Docusaurus, GitHub Pages, relevant tools)
+- Writing level: technical English, grade 8–10 clarity
+- Formatting standard: Docusaurus MDX conventions
+- Version control discipline: clear commits, always deployable state
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Constraints
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+- Book length: approximately 5–12 chapters
+- Audience: developers learning AI-powered, spec-driven documentation workflows
+- File format: Markdown/MDX for Docusaurus
+- Deployment target: GitHub Pages
+- Required tools: Spec-Kit Plus + Qwen Code
+- File organization must follow Docusaurus /docs structure
+- Diagrams stored in /static/img (AI-generated or manually created)
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Success Criteria
+
+- All chapters complete and follow the required structure
+- A developer can fully replicate the workflow end-to-end:
+  - Install Docusaurus
+  - Build content from specs
+  - Use Qwen Code + Spec-Kit Plus effectively
+  - Deploy to GitHub Pages
+- All instructions, steps, and commands tested and functional
+- Clear, beginner-friendly explanations with no missing steps
+- No broken links, missing references, or unclear instructions
+- GitHub Pages deployment functions successfully without errors
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs all writing and content generation decisions for the project. Every chapter, spec, prompt, and task must follow these principles to ensure the book is technically accurate, spec-driven, structured, and professionally publishable. All PRs and reviews must verify compliance with these principles.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-01-15 | **Last Amended**: 2025-01-15

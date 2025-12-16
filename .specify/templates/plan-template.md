@@ -31,7 +31,13 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Based on the project constitution:
+- All implementation must follow Spec-Driven Development principles
+- Technical accuracy must align with official documentation
+- Content must maintain clarity for beginner-to-intermediate developers
+- All code examples must run successfully and follow Docusaurus formatting
+- Documentation-Quality Writing standards must be maintained
+- AI-Augmented Authorship should be leveraged while ensuring human review
 
 ## Project Structure
 

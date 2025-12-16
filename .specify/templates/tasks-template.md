@@ -25,21 +25,21 @@ description: "Task list template for feature implementation"
 - **Mobile**: `api/src/`, `ios/src/` or `android/src/`
 - Paths shown below assume single project - adjust based on plan.md structure
 
-<!-- 
+<!--
   ============================================================================
   IMPORTANT: The tasks below are SAMPLE TASKS for illustration purposes only.
-  
+
   The /sp.tasks command MUST replace these with actual tasks based on:
   - User stories from spec.md (with their priorities P1, P2, P3...)
   - Feature requirements from plan.md
   - Entities from data-model.md
   - Endpoints from contracts/
-  
+
   Tasks MUST be organized by user story so each story can be:
   - Implemented independently
   - Tested independently
   - Delivered as an MVP increment
-  
+
   DO NOT keep these sample tasks in the generated tasks.md file.
   ============================================================================
 -->
@@ -249,3 +249,10 @@ With multiple developers:
 - Commit after each task or logical group
 - Stop at any checkpoint to validate story independently
 - Avoid: vague tasks, same file conflicts, cross-story dependencies that break independence
+- **Constitution Alignment**: All tasks must follow the project constitution principles:
+  - Spec-Driven Development: Ensure all features originate from clear specifications
+  - Technical Accuracy: Align content with official documentation
+  - Clarity for beginner-to-intermediate developers: Maintain grade 8-10 writing level
+  - Documentation-Quality Writing: Follow educational, step-by-step, actionable formats
+  - AI-Augmented Authorship: Leverage AI tools while ensuring human review
+  - Code Example Quality: Ensure all examples run successfully and follow formatting standards

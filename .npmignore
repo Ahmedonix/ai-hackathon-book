@@ -1,0 +1,47 @@
+# Docusaurus / Node.js specific
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+coverage/
+*.tsbuildinfo
+.next/
+.nuxt/
+dist/
+dist-ssr/
+*.local
+
+# Docusaurus specific
+.cache/
+.docusaurus/
+.generated/
+
+# ROS 2 related
+*.log
+*.log.*
+build/
+install/
+log/
+devel/
+
+# Documentation source
+# (We don't ignore docs/ as it contains the source content)
+
+# Build outputs
+_build/
+_site/
+public/
+out/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Icon?
+*/

@@ -20,7 +20,7 @@ By the end of this module, you will be able to:
 ## Prerequisites
 
 Before starting this module, you should have:
-- Completed Module 1 (ROS 2 fundamentals) 
+- Completed Module 1 (ROS 2 fundamentals)
 - Completed Module 2 (Simulation environments)
 - Basic understanding of AI/ML concepts
 - NVIDIA GPU compatible with Isaac Sim (RTX 4070 Ti or better recommended)
@@ -30,11 +30,11 @@ Before starting this module, you should have:
 
 This module is organized into the following sections:
 
-1. [Isaac Sim Setup and Synthetic Data Tools](./isaac-sim-setup.md) - Installing and configuring Isaac Sim
-2. [Isaac ROS Perception Stack](./isaac-perception.md) - Building perception pipelines
-3. [VSLAM and Navigation](./vslam-navigation.md) - Implementing localization and navigation
-4. [Building AI Pipelines](./ai-pipelines.md) - Creating intelligent behavior systems
-5. [Sim-to-Real Transfer](./sim2real.md) - Bridging simulation to reality
+1. [Isaac Sim Setup and Synthetic Data Tools](./isaac-sim.md) - Installing and configuring Isaac Sim
+2. [Isaac ROS Perception Stack](./isaac-perception-stack.md) - Building perception pipelines
+3. [VSLAM and Navigation](./vslam.md) - Implementing localization and navigation
+4. [Building AI Pipelines](./ai-pipeline.md) - Creating intelligent behavior systems
+5. [Sim-to-Real Transfer](./sim2real-transfer.md) - Bridging simulation to reality
 6. [Jetson Deployment](./jetson-deployment.md) - Deploying to embedded platforms
 7. [Bipedal Motion Planning](./motion-planning.md) - Humanoid-specific motion algorithms
 8. [Practical Exercises](./exercises/) - Hands-on implementations
@@ -95,6 +95,6 @@ Control Commands (Low-level actuation)
 
 ## Getting Started
 
-Begin with the [Isaac Sim Setup and Synthetic Data Tools](./isaac-sim-setup.md) section to install and configure your NVIDIA Isaac Sim environment. The setup process is more complex than Gazebo due to the advanced GPU acceleration and synthetic data generation capabilities.
+Begin with the [Isaac Sim Setup and Synthetic Data Tools](./isaac-sim.md) section to install and configure your NVIDIA Isaac Sim environment. The setup process is more complex than Gazebo due to the advanced GPU acceleration and synthetic data generation capabilities.
 
 This module builds directly on the simulation environment you created in Module 2, extending it with AI capabilities using Isaac's powerful GPU-accelerated tools.

@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Overview
 
-Welcome to Module 2 of the Physical AI & Humanoid Robotics Book! In this module, we'll explore digital twin simulation - the creation of virtual environments that accurately represent and simulate real-world robotic systems. 
+Welcome to Module 2 of the Physical AI & Humanoid Robotics Book! In this module, we'll explore digital twin simulation - the creation of virtual environments that accurately represent and simulate real-world robotic systems.
 
 Simulation is a critical component of robotics development, allowing you to test algorithms, validate designs, and train AI systems without the constraints of physical hardware. This module covers two major simulation platforms: Gazebo for physics simulation and Unity for high-fidelity visualization.
 
@@ -38,11 +38,11 @@ This module is organized into the following sections:
 2. [URDF Import and Configuration](./urdf-import.md) - Bringing robot models into simulation
 3. [Physics Simulation Fundamentals](./physics.md) - Understanding and configuring physics properties
 4. [Sensor Simulation](./sensors.md) - Setting up simulated sensors (LiDAR, camera, IMU)
-5. [Environment Design and World Building](./worlds.md) - Creating custom simulation environments
-6. [Unity Integration](./unity.md) - Using Unity for high-fidelity visualization
-7. [ROS 2 Integration](./ros2-integration.md) - Connecting simulation to ROS 2 nodes
-8. [Testing Humanoid Motion](./humanoid-motion-validation.md) - Validating robot locomotion in simulation
-9. [Simulation Debugging Techniques](./debugging.md) - Troubleshooting simulation issues
+5. [Environment Design and World Building](./world-building.md) - Creating custom simulation environments
+6. [Unity Integration](./unity-visualization.md) - Using Unity for high-fidelity visualization
+7. [ROS 2 Integration](./unity-ros-connection.md) - Connecting simulation to ROS 2 nodes
+8. [Testing Humanoid Motion](./motion-testing.md) - Validating robot locomotion in simulation
+9. [Simulation Debugging Techniques](./debugging-techniques.md) - Troubleshooting simulation issues
 
 ## Prerequisites
 

@@ -11,13 +11,13 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://speckit.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub Pages, this is usually '/<project-name>/'
   baseUrl: '/ai-hackathon-book/',
 
   // GitHub pages deployment config.
-  organizationName: 'speckit', // Usually your GitHub org/user name.
+  organizationName: '[YOUR_GITHUB_USERNAME_OR_ORG]', // Usually your GitHub org/user name.
   projectName: 'ai-hackathon-book', // Usually your repo name.
 
   onBrokenLinks: 'throw',

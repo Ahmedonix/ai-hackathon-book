@@ -37,6 +37,6 @@ The book is organized into four progressive modules:
 
 ### Getting Started
 
-Start with [Module 1](./module1-ros2/index) to establish your ROS 2 foundation, then progress sequentially through each module. Each module builds upon the previous one with increasing complexity and integration.
+Start with [Module 1](./module1-ros2/) to establish your ROS 2 foundation, then progress sequentially through each module. Each module builds upon the previous one with increasing complexity and integration.
 
-Ready to begin your journey into humanoid robotics? Let's start with [Module 1: ROS 2 Fundamentals](./module1-ros2/index).
+Ready to begin your journey into humanoid robotics? Let's start with [Module 1: ROS 2 Fundamentals](./module1-ros2/).

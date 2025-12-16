@@ -45,34 +45,34 @@ function QuickOverviewSection() {
             </p>
           </div>
         </div>
-        
+
         <div className="row margin-top--lg">
           <div className="col col--4">
             <h3>Module 1: Robotic Nervous System (ROS 2)</h3>
             <p>Master ROS 2 architecture, communication patterns, and implementation techniques to build the foundation of your intelligent robot.</p>
-            <Link to="/docs/module1-ros2/index">Learn More →</Link>
+            <Link to="/docs/module1-ros2/">Learn More →</Link>
           </div>
-          
+
           <div className="col col--4">
             <h3>Module 2: Digital Twin Simulation</h3>
             <p>Create, simulate, and test humanoid robots in physics-based environments using Gazebo and Unity Robotics Hub.</p>
-            <Link to="/docs/module2-simulation/index">Learn More →</Link>
+            <Link to="/docs/module2-simulation/">Learn More →</Link>
           </div>
-          
+
           <div className="col col--4">
             <h3>Module 3: AI-Robot Brain</h3>
             <p>Build an intelligent AI brain for humanoid robots using NVIDIA's Isaac platform and perception pipelines.</p>
-            <Link to="/docs/module3-ai/index">Learn More →</Link>
+            <Link to="/docs/module3-ai/">Learn More →</Link>
           </div>
         </div>
-        
+
         <div className="row margin-top--lg">
           <div className="col col--4 col--offset-2">
             <h3>Module 4: Vision-Language-Action</h3>
             <p>Integrate voice, vision, language, and action for unified cognitive robotics systems with advanced AI models.</p>
-            <Link to="/docs/module4-vla/index">Learn More →</Link>
+            <Link to="/docs/module4-vla/">Learn More →</Link>
           </div>
-          
+
           <div className="col col--4">
             <h3>Capstone Project</h3>
             <p>Synthesis your learnings in a comprehensive project integrating all modules for a complete humanoid robot system.</p>

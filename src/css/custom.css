@@ -1,0 +1,24 @@
+/* You can override the default Docusaurus styling with your own custom styles here */
+
+/* Example custom styles */
+:root {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: rgb(33, 175, 144);
+  --ifm-color-primary-darker: rgb(31, 165, 136);
+  --ifm-color-primary-darkest: rgb(26, 136, 112);
+  --ifm-color-primary-light: rgb(70, 203, 174);
+  --ifm-color-primary-lighter: rgb(102, 212, 189);
+  --ifm-color-primary-lightest: rgb(146, 224, 208);
+}
+
+/* Custom heading styles */
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+/* Custom code block styles */
+.codeBlockLines_eLFM {
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}

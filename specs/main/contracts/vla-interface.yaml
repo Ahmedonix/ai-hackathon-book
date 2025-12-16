@@ -1,0 +1,158 @@
+# Contract: Vision-Language-Action (VLA) Interface
+
+## Overview
+This contract defines the interface between voice input, language processing (GPT), and robotic action execution (ROS 2) for Module 4 of the Physical AI & Humanoid Robotics book. This interface enables natural language commands to be converted into robotic actions.
+
+## Components
+
+### 1. Speech-to-Text Service Interface
+- **Service Name**: `/speech_to_text`
+- **Type**: Custom service defined in book
+- **Purpose**: Convert spoken commands to text
+- **Request**:
+  - audio_data: string (base64 encoded audio)
+  - language: string (e.g., "en-US")
+- **Response**:
+  - text: string (transcribed text)
+  - confidence: float (0.0 to 1.0)
+  - success: bool
+
+### 2. Natural Language Processing Interface
+- **Service Name**: `/process_command`
+- **Type**: Custom service defined in book
+- **Purpose**: Parse natural language commands and generate action plans
+- **Request**:
+  - command: string (natural language command)
+  - context: string (current robot state/context)
+- **Response**:
+  - action_plan: array of action objects
+  - confidence: float (0.0 to 1.0)
+  - success: bool
+  - error_message: string (if success is false)
+
+### 3. Action Planning Structure
+- **Purpose**: Define how natural language commands are decomposed into executable actions
+- **Fields**:
+  - id: string (unique identifier for the action)
+  - name: string (e.g., "move_forward", "turn", "grasp_object")
+  - parameters: object (action-specific parameters)
+  - dependencies: array of strings (other actions that must complete first)
+  - success_condition: string (how to verify the action was completed)
+
+## Message Types
+
+### 1. Voice Command Interface
+- **Topic**: `/voice_command`
+- **Type**: Custom message (defined in book package)
+- **Direction**: Publisher from voice interface node
+- **Purpose**: Publish voice commands received from user
+- **Fields**:
+  - command_text: string (transcribed command)
+  - timestamp: time (when command was received)
+  - confidence: float (ASR confidence score)
+  - source: string (e.g., "microphone_1", "stream")
+
+### 2. Action Plan Interface
+- **Topic**: `/action_plan`
+- **Type**: Custom message (defined in book package)
+- **Direction**: Publisher from NLP node to action executor
+- **Purpose**: Publish sequence of actions to be executed
+- **Fields**:
+  - plan_id: string (unique identifier)
+  - actions: array of action objects (see Action Planning Structure)
+  - created_at: time (timestamp)
+
+### 3. Execution Status Interface
+- **Topic**: `/execution_status`
+- **Type**: Custom message (defined in book package)
+- **Direction**: Publisher from action executor
+- **Purpose**: Report status of action plan execution
+- **Fields**:
+  - plan_id: string (matches the executed plan)
+  - current_action_id: string (currently executing action)
+  - status: string ("in_progress", "completed", "failed", "waiting")
+  - progress: float (0.0 to 1.0)
+  - error_message: string (if status is "failed")
+
+## Action Types
+
+### 1. Navigation Actions
+- **move_to_location**
+  - Parameters:
+    - x: float (target x coordinate)
+    - y: float (target y coordinate)
+    - theta: float (target orientation)
+  - Purpose: Navigate robot to specified location
+
+### 2. Manipulation Actions
+- **grasp_object**
+  - Parameters:
+    - object_name: string
+    - position: geometry_msgs/Point
+  - Purpose: Grasp a specific object at the given position
+
+- **place_object**
+  - Parameters:
+    - object_name: string
+    - target_location: geometry_msgs/Point
+  - Purpose: Place an object at the specified location
+
+### 3. Perception Actions
+- **look_at**
+  - Parameters:
+    - target: geometry_msgs/Point
+  - Purpose: Orient robot's head/camera to look at a point
+
+- **detect_objects**
+  - Parameters:
+    - object_types: array of strings (e.g., ["cup", "chair"])
+  - Purpose: Detect specified objects in the environment
+
+### 4. Interaction Actions
+- **speak_response**
+  - Parameters:
+    - text: string (text to speak)
+  - Purpose: Generate speech output to communicate with user
+
+## Integration Points
+
+### With ROS 2 Core (Module 1)
+- Leverages ROS 2 communication patterns (topics, services, actions)
+- Integrates with existing robot control nodes
+- Uses standard ROS 2 message types where possible
+
+### With Simulation (Module 2)
+- Connects to simulated voice input in Unity/Gazebo
+- Validates action execution in simulation environment
+- Provides feedback through simulated speech output
+
+### With AI Perception (Module 3)
+- Uses perception results to inform action planning
+- Integrates Nav2 for navigation actions
+- Leverages Isaac ROS for perception processing
+
+## Quality Requirements
+
+### Accuracy
+- Speech recognition accuracy > 80% in quiet environment
+- Command interpretation accuracy > 85% for common commands
+- Action execution success rate > 80% in simulation
+
+### Responsiveness
+- Voice command to action execution time < 5 seconds
+- Speech-to-text processing < 2 seconds
+- Action plan generation < 3 seconds
+
+### Robustness
+- Handle unrecognized commands gracefully
+- Provide meaningful error messages to users
+- Implement safety constraints for action execution
+
+## Validation Criteria
+
+For the VLA interface implemented in the book:
+1. Voice commands must be correctly transcribed at least 80% of the time
+2. Natural language commands must be correctly parsed into action plans
+3. Action plans must execute successfully in simulation environment
+4. Error handling must be demonstrated for invalid commands
+5. Safety checks must prevent dangerous robot motions

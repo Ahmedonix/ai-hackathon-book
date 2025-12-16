@@ -88,7 +88,6 @@ docs/api/  # Auto-generated API docs
 ehthumbs.db
 Thumbs.db
 Icon?
-*/
 
 # Build outputs
 _build/

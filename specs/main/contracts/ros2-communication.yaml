@@ -1,0 +1,155 @@
+# Contract: ROS 2 Node Communication Interface
+
+## Overview
+This contract defines the communication interfaces between different ROS 2 nodes that will be implemented and documented in the Physical AI & Humanoid Robotics book. These interfaces are essential for Module 1 (ROS 2 Fundamentals) and form the foundation for all subsequent modules.
+
+## Message Types
+
+### 1. JointState Message Interface
+- **Topic**: `/joint_states`
+- **Type**: `sensor_msgs/JointState`
+- **Direction**: Publisher from robot controller, Subscriber for perception nodes
+- **Purpose**: Publish current joint positions, velocities, and efforts for the humanoid robot
+- **Fields**:
+  - name: array of strings (joint names)
+  - position: array of floats (joint positions in radians)
+  - velocity: array of floats (joint velocities in rad/s)
+  - effort: array of floats (joint efforts in Nm)
+
+### 2. Twist Message Interface
+- **Topic**: `/cmd_vel`
+- **Type**: `geometry_msgs/Twist`
+- **Direction**: Subscriber to motion commands
+- **Purpose**: Receive velocity commands for robot base movement
+- **Fields**:
+  - linear.x: float (forward/backward velocity)
+  - linear.y: float (lateral velocity)
+  - linear.z: float (vertical velocity)
+  - angular.x: float (roll rate)
+  - angular.y: float (pitch rate)
+  - angular.z: float (yaw rate)
+
+### 3. IMU Data Interface
+- **Topic**: `/imu/data`
+- **Type**: `sensor_msgs/Imu`
+- **Direction**: Publisher from simulation/hardware
+- **Purpose**: Provide inertial measurement data for balance and orientation
+- **Fields**:
+  - orientation: geometry_msgs/Quaternion
+  - angular_velocity: geometry_msgs/Vector3
+  - linear_acceleration: geometry_msgs/Vector3
+
+### 4. Laser Scan Interface
+- **Topic**: `/scan`
+- **Type**: `sensor_msgs/LaserScan`
+- **Direction**: Publisher from simulated LiDAR
+- **Purpose**: Provide distance measurements for obstacle detection
+- **Fields**:
+  - angle_min: float
+  - angle_max: float
+  - angle_increment: float
+  - time_increment: float
+  - scan_time: float
+  - range_min: float
+  - range_max: float
+  - ranges: array of floats
+  - intensities: array of floats (optional)
+
+### 5. Camera Image Interface
+- **Topic**: `/camera/image_raw`
+- **Type**: `sensor_msgs/Image`
+- **Direction**: Publisher from simulated camera
+- **Purpose**: Provide visual data for perception algorithms
+- **Fields**:
+  - header: std_msgs/Header
+  - height: uint32
+  - width: uint32
+  - encoding: string
+  - is_bigendian: uint8
+  - step: uint32
+  - data: array of uint8
+
+## Service Interfaces
+
+### 1. Robot Control Service
+- **Service Name**: `/robot_control`
+- **Type**: Custom service (defined in book)
+- **Purpose**: Provide high-level control commands to the robot
+- **Request**:
+  - command: string (e.g., "move_forward", "turn_left", "stop")
+  - duration: float (optional, in seconds)
+- **Response**:
+  - success: bool
+  - message: string (status or error message)
+
+### 2. Navigation Service
+- **Service Name**: `/navigate_to_pose`
+- **Type**: `nav_msgs/GetPlan` (or similar)
+- **Purpose**: Request navigation to a specific pose
+- **Request**:
+  - start: geometry_msgs/PoseStamped
+  - goal: geometry_msgs/PoseStamped
+  - tolerance: float
+- **Response**:
+  - plan: nav_msgs/Path
+
+## Action Interfaces
+
+### 1. Navigation Action
+- **Action Name**: `/move_base`
+- **Type**: `move_base_msgs/MoveBaseAction`
+- **Purpose**: Execute navigation task with feedback and goal management
+- **Goal**:
+  - target_pose: geometry_msgs/PoseStamped
+- **Feedback**:
+  - base_position: geometry_msgs/PoseStamped
+- **Result**:
+  - outcome: int8 (SUCCESS, FAILURE)
+  - message: string
+
+## Module Integration Points
+
+### Module 1 - ROS 2 Fundamentals
+- Basic node communication
+- Understanding publisher/subscriber pattern
+- Implementing custom message types
+
+### Module 2 - Digital Twin Simulation
+- Connecting simulated sensors to ROS topics
+- Validating sensor data publishing
+- Testing with simulated robot models
+
+### Module 3 - AI-Robot Brain
+- Using sensor data for perception
+- Implementing navigation with Nav2
+- Processing visual and LiDAR data
+
+### Module 4 - Vision-Language-Action
+- Converting language commands to ROS actions
+- Triggering navigation based on voice commands
+- Integrating multimodal perception
+
+## Quality Requirements
+
+### Performance
+- Topic update rates as specified by sensor requirements
+- Service response time < 100ms for critical commands
+- Action feedback published at minimum 10Hz
+
+### Reliability
+- Nodes must handle disconnections gracefully
+- Error states must be published via appropriate channels
+- Recovery procedures documented for each interface
+
+### Compatibility
+- Interfaces compatible with ROS 2 Iron
+- Message types aligned with standard ROS 2 packages
+- Backward compatibility maintained where possible
+
+## Validation Criteria
+
+For each interface documented in the book:
+1. Example code must run successfully in simulation environment
+2. Data types must match ROS 2 standard message definitions
+3. Communication patterns must follow ROS 2 best practices
+4. Error handling must be demonstrated
